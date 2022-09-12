@@ -1,14 +1,10 @@
-# Deep_Fashion_Designer_Gan
-This repository have code for DFD GAN. 
+# Deep Fashion Designer GAN (DFD_GAN)
+This repository have code for DFD GAN. This GAN takes four difference categories of fashion items and generates a suitable fashion item.
 
 ## Requirements
-* python3.6+
-* pytorch 1.6.0
+* python3.7+
+* pytorch 1.7.0
 * others.
-
-## Loss
-* WGAN-GP
-* LSGAN-GP
 
 ## Usage
 training a model
@@ -21,48 +17,34 @@ testing a model
 Not implmented yet
 ```
 
-## Dataset Format (Json)
-```
-[
-  "216897157", # outfit_set_id
-  { # GT images in a set
-   "index": 1,
-   "category": 0
-  },
-  [ # input image list in a set
-   {
-    "index": 2,
-    "category": -1
-   },
-   {
-    "index": 3,
-    "category": -1
-   },
-   {
-    "index": 4,
-    "category": -1
-   },
-   {
-    "index": 5,
-    "category": -1
-   }
-  ]
- ]
-```
-
 ## Architecture
-![architecture](img/fig_overview.png)
+![architecture](img/overview.jpg)
 
-## Example
-![fig_example](img/fig_example.png)
-The left most image is a GT image and the rest of images are input to DFD GAN in a row.
+## Tops Results
+![outer_result](img/outer_fig_gen.jpg)
+![inner_result](img/inner_fig_gen.jpg)
 
-## Results
-![fig_bag](img/fig_bag.png)
-![fig_accessorie](img/fig_accessorie.png)
+## Bottoms Results
+![bottoms_result](img/bottoms_fig_gen.jpg)
+
+## Accessories Results
+![bags_result](img/bags_fig_gen.jpg)
+![earrings_result](img/earrings_fig_gen.jpg)
+
+## Refinement Results
+![refine_result](img/refine_fig_6.jpg)
+
+## Mapping Network Results
+![mapping_result](img/tsne_result.jpg)
+
+## Wrong Results
+![wrong_result](img/wrong_fig.jpg)
 
 ## Comments
 None for now.
 ## Reference
-1. Canny Edge Detector : https://github.com/DCurro/CannyEdgePytorch
-2. Spectral Normalization : https://github.com/christiancosgrove/pytorch-spectral-normalization-gan/blob/master/spectral_normalization.
+1. [Dataset](https://github.com/xthan/polyvore)
+2. [Spectral Normalization](https://github.com/christiancosgrove/pytorch-spectral-normalization-gan/blob/master/spectral_normalization.py)
+3. [U-net](https://github.com/milesial/Pytorch-UNet)
+4. [FINCH Clustering](https://github.com/ssarfraz/FINCH-Clustering)
+5. [BIT](https://github.com/google-research/big_transfer)
