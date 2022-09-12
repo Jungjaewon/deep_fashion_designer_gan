@@ -1,0 +1,51 @@
+
+WALK_CONFIG:
+  IDX : 10
+  STEP : 1e-4
+  TOTAL_STEP : 30
+
+TRAINING_CONFIG:
+
+  IMG_SIZE: 256
+  BATCH_SIZE: 1
+  UPSAMPLE : 'transposed' # bilinear transposed
+  TAGET_DIR : 'lsgan_all_l1loss_ins_affine_conv4_g2_glr3e5_t1' # ls_all_e64_b150_g2_glr3_t1
+  MODE : 'test'
+
+  BlOCK: 'conv' # conv res
+  ATTENTION: '' # SELF, CBAM, SELF_*, CBAM_*, '', * is 0~5
+  LR: 0.01 # 0.01 0.02 0.1 0.2
+
+  # architecture configuration
+  NUM_ITEM : 5
+  NUM_TARGET : 1
+  DATA_NUM : 5 # 1 ~ 5
+
+  ENCODER_MULTI : 'True'
+  E_START_CH : 64 # 64 32 16 64
+  E_LAST_CH : 128 # 128 64 32 256
+  USE_EMD : 'True'
+  EMD_REPEAT : 6
+  EMD_FNC : 'LeakyR' # R, LeakyR
+
+  LATENT_SIZE : 1
+  LATENT_V : 3 # 0,1,2,3
+  CONCAT_MODE : 0
+
+  G_SPEC: 'False'
+
+  # Settings
+  NUM_WORKER : 8
+  SEED : 0 # 0 means do not set seed
+
+  IMG_DIR : 'outfitdata_set3' #'poly_dataset_all' , outfitdata_set2, outfitdata_old
+  TRAIN_DIR : 'walking_distance_result_0'
+  LOG_DIR : 'logs'
+  SAMPLE_DIR : 'samples'
+  RESULT_DIR : 'results'
+  MODEL_DIR : 'models'
+
+  # GPU
+  GPU: 1
+
+

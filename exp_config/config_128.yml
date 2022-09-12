@@ -1,0 +1,94 @@
+
+
+TRAINING_CONFIG:
+
+  WANDB: 'False'
+  EPOCH: 500 # 500 10
+  IMG_SIZE: 128
+  BATCH_SIZE: 16
+  G_D_BAL: 300 # 150
+  REFINE_EPOCH : 200 # 5 200
+  REFINE : 'False' # 'True'
+  UPSAMPLE : 'transposed' # bilinear transposed
+
+  G_VER: 0
+  LR: 0.01 # 0.01 0.02 0.1 0.2
+
+  # architecture configuration
+  NUM_ITEM : 5
+  NUM_TARGET : 1
+  DATA_NUM : 5 # 1 ~ 5
+
+  ENCODER_MODE : 1
+  E_START_CH : 32 # 64 32 16 64
+  E_LAST_CH : 64 # 128 64 32 256
+  D_START_CH : 8
+
+  E_LAYER : 6
+  G_LAYER : 6
+  D_LAYER : 3
+
+  LATENT_SIZE : 1
+  LATENT_V : 3 # 0,1,2,3
+  CONCAT_MODE : 0
+
+  BB_CLASS: 380 # 380 # 7 # 1000
+  BB_CKPT: 'imagenet' #'014-98-model.ckpt'  # 'module-900000-model.ckpt' 'imagenet'
+
+  # lr and lambda
+  G_LR : 3e-5 # 3e-5
+  D_LR : 1e-6
+  R_LR : 2e-5
+
+  D_CRITIC: 1 # 1
+  G_CRITIC: 1
+
+  LAMBDA_G_FAKE  : 1 # 1 0.5
+  LAMBDA_G_KL : 100
+  LAMBDA_G_PERCEP : 50
+  LAMBDA_G_GT : 1 # 1 40 50 70
+  LAMBDA_G_TV : 1
+
+  LAMBDA_D_FAKE  : 1
+  LAMBDA_D_REAL  : 1
+  LAMBDA_GP : 1
+
+  USE_EMD: 'True' # 'True', 'False'
+  USE_KL_LOSS : 'False'
+  USE_PERCEP : 'True' # 'False' 'True'
+  USE_GT : 'True'
+  USE_TV_REG : 'False'
+  VGG_LAYER : '14'
+
+  GAN_LOSS : 'lsgan' # lsgan, wgan, r1loss
+
+  # Optimizer
+  OPTIM : ADAM
+  BETA1: 0.5 # 0.0
+  BETA2: 0.999
+
+  # Settings
+  NUM_WORKER : 2
+  MODE : 'train' # 'test', 'metric'?
+  SEED : 0 # 0 means do not set seed
+
+  IMG_DIR : 'outfitdata_set3_2341' #'poly_dataset_all' , outfitdata_set2, outfitdata_old
+  TRAIN_DIR : 'lsgan_gt_percep_50_en1_imsize128'
+  LOG_DIR : 'logs'
+  SAMPLE_DIR : 'samples'
+  RESULT_DIR : 'results'
+  MODEL_DIR : 'models'
+
+  # GPU
+  GPU: 0
+
+  # Step Size
+  SAMPLE_STEP : 5 # epoch based
+  TEST_STEP : 50 # epoch based
+  LOG_STEP : 50 # iteration based
+  SAVE_STEP : 50 # epoch based
+  SAVE_START : 100
+  LR_DECAY_POLICY : 'None' # LambdaLR, None, # ExponentialLR StepLR
+  # lr_schedule : https://sanghyu.tistory.com/113
+
+

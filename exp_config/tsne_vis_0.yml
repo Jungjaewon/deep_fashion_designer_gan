@@ -1,0 +1,44 @@
+
+
+TRAINING_CONFIG:
+
+  IMG_SIZE: 256
+  BATCH_SIZE: 1
+  UPSAMPLE : 'transposed' # bilinear transposed
+  TAGET_DIR : 'lsgan_gt_percep_50_en1_no_mapping'
+  MODE : 'test'
+
+  G_VER: 0
+  LR: 0.01 # 0.01 0.02 0.1 0.2
+
+  # architecture configuration
+  NUM_ITEM : 5
+  NUM_TARGET : 1
+  DATA_NUM : 5 # 1 ~ 5
+
+  ENCODER_MODE : 1
+  E_START_CH : 64 # 64 32 16 64
+  E_LAST_CH : 128 # 128 64 32 256
+  USE_EMD : 'False'
+
+  LATENT_SIZE : 1
+  LATENT_V : 3 # 0,1,2,3
+  CONCAT_MODE : 0
+
+  G_SPEC: 'False'
+
+  # Settings
+  NUM_WORKER : 4
+  SEED : 0 # 0 means do not set seed
+
+  IMG_DIR : 'outfitdata_set3_2341' #'poly_dataset_all' , outfitdata_set2, outfitdata_old
+  TRAIN_DIR : 'tsne_dot_lsgan_gt_percep_50_en1_no_mapping'
+  LOG_DIR : 'logs'
+  SAMPLE_DIR : 'samples'
+  RESULT_DIR : 'results'
+  MODEL_DIR : 'models'
+
+  # GPU
+  GPU: 0
+
+

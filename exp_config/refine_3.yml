@@ -1,0 +1,71 @@
+
+
+TRAINING_CONFIG:
+
+  WANDB: 'True'
+  EPOCH: 200 #
+  IMG_SIZE: 256
+  BATCH_SIZE: 16
+  TAGET_DIR : 'lsgan_gt_percep_50_en1'
+  UPSAMPLE : 'transposed' # transposed, bilinear
+
+  G_VER: 0
+  LR: 0.01 # 0.01 0.02 0.1 0.2
+
+  # architecture configuration
+  NUM_ITEM : 5
+  NUM_TARGET : 1
+  DATA_NUM : 5 # 1 ~ 5
+
+  LOSS_USE : 'l1' # l2
+
+  USE_TV_LOSS : 'False'
+
+  LAMBDA_D_FAKE: 0.5
+  LAMBDA_D_REAL: 0.5
+  LAMBDA_R_FAKE: 0.5
+  LAMBDA_R_TV: 0.001
+
+  ENCODER_MODE : 1
+  E_START_CH : 64
+  E_LAST_CH : 128
+
+  LATENT_SIZE : 1
+  LATENT_V : 3 # 0,1,2,3
+  CONCAT_MODE : 0
+
+  R_LR : 5e-6
+  D_LR : 5e-6
+
+  USE_EMD : 'True'
+
+  # Optimizer
+  OPTIM : ADAM
+  BETA1: 0.5 # 0.0
+  BETA2: 0.999
+
+  # Settings
+  NUM_WORKER : 4
+  MODE : 'train' # 'test', 'metric'?
+  SEED : 0 # 0 means do not set seed
+
+  IMG_DIR : 'outfitdata_set3_2341'
+  TRAIN_DIR : 'refine_lsgan_gt_percep_50_en1_5e-6_fix'
+  LOG_DIR : 'logs'
+  SAMPLE_DIR : 'samples'
+  RESULT_DIR : 'results'
+  MODEL_DIR : 'models'
+
+  # GPU
+  GPU: 0
+
+  # Step Size
+  SAMPLE_STEP : 1 # epoch based
+  TEST_STEP : 10 # epoch based
+  LOG_STEP : 50 # iteration based
+  SAVE_STEP : 10 # epoch based
+  SAVE_START : 10
+  LR_DECAY_POLICY : 'None' # LambdaLR, None, # ExponentialLR StepLR
+  # lr_schedule : https://sanghyu.tistory.com/113
+
+
