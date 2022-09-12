@@ -1,5 +1,5 @@
 # Deep Fashion Designer GAN (DFD_GAN)
-This repository have code for DFD GAN. This GAN takes four difference categories of fashion items and generates a suitable fashion item.
+This repository has code for DFD GAN. This GAN takes four difference categories of fashion items and generates a suitable fashion item.
 
 ## Requirements
 * python3.7+
