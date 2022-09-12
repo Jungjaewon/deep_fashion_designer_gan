@@ -40,6 +40,9 @@ Not implmented yet
 ## Wrong Results
 ![wrong_result](img/wrong_fig.jpg)
 
+## License
+Attribution-NonCommercial-ShareAlike 4.0 International
+
 ## Comments
 None for now.
 ## Reference
